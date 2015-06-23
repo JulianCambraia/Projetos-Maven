@@ -7,15 +7,15 @@ import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
 /**
  *
  * @author julian.fernando
  */
+@RequestScoped
 @ManagedBean
-@SessionScoped
 public class DogMB {
     
     @EJB
