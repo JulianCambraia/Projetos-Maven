@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web xmlns="http://www.jboss.com/xml/ns/javaee">
+  <!-- URL to access the web module -->
+  <context-root>/AppMavenDogs</context-root>
+  <!-- Realm that will be used -->
+  <security-domain>CrudJSFRealm</security-domain>
+  <disable-audit>true</disable-audit>
+</jboss-web>
