@@ -4,7 +4,7 @@ import br.com.rps.facade.UserFacade;
 import br.com.rps.model.User;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author julian.fernando
  */
+@RequestScoped
 @ManagedBean
-@SessionScoped
 public class UserMB {
     
     @EJB
@@ -23,12 +23,12 @@ public class UserMB {
     private User user;
 
     public User getUser() {
-        if (this.user == null) {
+        if (user == null) {
             ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
             String userEmail = context.getUserPrincipal().getName();
-            this.user = userFacade.findUserByEmail(userEmail);
+            user = userFacade.findUserByEmail(userEmail);
         }
-        return this.user;
+        return user;
     }
     
     public boolean isUserAdmin() {
